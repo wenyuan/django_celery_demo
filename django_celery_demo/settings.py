@@ -138,4 +138,6 @@ CELERY_RESULT_BACKEND = 'redis://:mypassword@127.0.0.1:6379/2'
 CELERY_RESULT_EXPIRES = 60 * 60 * 24
 # 时区配置
 CELERY_TIMEZONE = 'Asia/Shanghai'
+# 配置定时器模块，定时器信息存储在数据库中
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 """ Celery Config End """
