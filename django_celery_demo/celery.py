@@ -8,7 +8,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_celery_demo.settings')
 # 创建应用
 app = Celery("django_celery_demo")
 # 配置应用
-app.config_from_object('django.conf:settings')
-# 设置 app 自动加载任务
-# 从已经安装的 app 中查找任务
-app.autodiscover_tasks(settings.INSTALLED_APPS)
+# namespace 表示所有与 celery 相关的配置键都有一个 CELERY_ 的前缀
+app.config_from_object('django.conf:settings', namespace='CELERY')
+# 从已经安装的 app 中加载任务模块
+app.autodiscover_tasks()

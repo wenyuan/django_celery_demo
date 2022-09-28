@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=nk15n2+!ie)=+iouscs=y!awu0)w2v1h)l8cv6b^&3k(#=a63
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -128,15 +128,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Celery Config Begin
-# Broker 配置，使用 Redis 作为消息中间件
-BROKER_URL = 'redis://:hgj%li46h@@127.0.0.1:6379/1'
-# BACKEND 配置，这里使用 Redis
-CELERY_RESULT_BACKEND = 'redis://:hgj%li46h@@127.0.0.1:6379/2'
-# 结果序列化方案
-CELERY_RESULT_SERIALIZER = 'json'
-# 任务结果过期时间，秒
-CELERY_TASK_RESULT_EXPIRES = 60 * 60 * 24
+""" Celery Config Begin """
+# https://docs.celeryq.dev/en/stable/userguide/configuration.html#new-lowercase-settings
+# broker 配置，使用 Redis 作为消息中间件
+CELERY_BROKER_URL = 'redis://:mypassword@127.0.0.1:6379/1'
+# backend 配置，这里使用 Redis
+CELERY_RESULT_BACKEND = 'redis://:mypassword@127.0.0.1:6379/2'
+# 后端存储任务结果过期时间，秒
+CELERY_RESULT_EXPIRES = 60 * 60 * 24
 # 时区配置
 CELERY_TIMEZONE = 'Asia/Shanghai'
-# Celery Config End
+""" Celery Config End """
