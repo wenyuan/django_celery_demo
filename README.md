@@ -11,7 +11,7 @@
 
 ## 前置准备
 
-* 本项目配套文档参考 [Django 与 Celery 的集成](https://www.fedbook.cn/backend-knowledge/django/django-integrating-celery/)
+* 本项目配套文档参考 [Django 与 Celery 的集成](https://www.fedbook.cn/backend-knowledge/django/django-integrate-celery/)
 * 安装 Redis 参考 [Redis 的安装与卸载](https://www.fedbook.cn/basic-skills/redis/installation-of-redis/)
 * 安装 Python 及虚拟环境参考 [Python 多版本虚拟环境共存](https://www.fedbook.cn/backend-knowledge/python/multiple-python-install-on-linux/)
 
